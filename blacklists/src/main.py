@@ -6,7 +6,10 @@ from .models import db
 
 app = Flask(__name__)
 
-dataBaseUri = f'postgresql://{ os.environ["DB_USER"] }:{ os.environ["DB_PASSWORD"] }@{ os.environ["DB_HOST"] }:{ os.environ["DB_PORT"] }/{ os.environ["DB_NAME"] }'
+if os.getenv("ENV") == "test":
+  dataBaseUri = os.getenv("DATABASE_URI", "sqlite:///:memory:")
+else:
+  dataBaseUri = f'postgresql://{ os.environ["DB_USER"] }:{ os.environ["DB_PASSWORD"] }@{ os.environ["DB_HOST"] }:{ os.environ["DB_PORT"] }/{ os.environ["DB_NAME"] }'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = dataBaseUri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
