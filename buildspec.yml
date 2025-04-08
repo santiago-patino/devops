@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  variables:
+    SERVICE_DIR: "mi-servicio"  # reemplaza esto por el nombre de tu servicio si no usarás variables de entorno
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11  # o la versión que uses
+    commands:
+      - echo "Instalando pipenv..."
+      - pip install pipenv
+
+  pre_build:
+    commands:
+      - echo "Instalando dependencias en $SERVICE_DIR..."
+      - cd $SERVICE_DIR
+      - pipenv install --dev
+
+  build:
+    commands:
+      - echo "Ejecutando pruebas unitarias..."
+      - pipenv run pytest --cov=src -v -s --cov-fail-under=70
+
+artifacts:
+  files:
+    - '**/*'
