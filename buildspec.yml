@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    SERVICE_DIR: "mi-servicio"  # reemplaza esto por el nombre de tu servicio si no usarás variables de entorno
+    SERVICE_DIR: "blacklists"  # reemplaza esto por el nombre de tu servicio si no usarás variables de entorno
 
 phases:
   install:
