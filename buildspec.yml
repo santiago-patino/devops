@@ -2,12 +2,12 @@ version: 0.2
 
 env:
   variables:
-    SERVICE_DIR: "blacklists"  # reemplaza esto por el nombre de tu servicio si no usarás variables de entorno
+    SERVICE_DIR: "blacklists"
 
 phases:
   install:
     runtime-versions:
-      python: 3.11  # o la versión que uses
+      python: 3.11
     commands:
       - echo "Instalando pipenv..."
       - pip install pipenv
@@ -28,5 +28,5 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: .  # Directorio raíz como punto de partida del empaquetado
-  discard-paths: no  # Mantiene la estructura de carpetas
+  base-directory: .
+  discard-paths: no
