@@ -44,7 +44,7 @@ class TestBlacklists():
     with app.test_client() as test_client:
       add_email = self.add_email()
       
-      assert add_email['response'].status_code == 200
+      assert add_email['response'].status_code == 201
       
     self.reset_database()
 
