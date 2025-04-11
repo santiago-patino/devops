@@ -20,7 +20,6 @@ phases:
 
   build:
     commands:
-      - set -e
       - echo "Ejecutando pruebas unitarias..."
       - pipenv run pytest --cov=src -v -s --cov-fail-under=70
       - echo "Volviendo a la raíz para empaquetar el proyecto"
