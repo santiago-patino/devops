@@ -1,0 +1,32 @@
+version: 0.2
+
+env:
+  variables:
+    SERVICE_DIR: "blacklists"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo "Instalando pipenv..."
+      - pip install pipenv
+
+  pre_build:
+    commands:
+      - echo "Instalando dependencias en $SERVICE_DIR..."
+      - cd $SERVICE_DIR
+      - pipenv install --dev
+
+  build:
+    commands:
+      - echo "Ejecutando pruebas unitarias..."
+      - pipenv run pytest --cov=src -v -s --cov-fail-under=70
+      - echo "Volviendo a la raíz para empaquetar el proyecto"
+      - cd ..
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: .
+  discard-paths: no

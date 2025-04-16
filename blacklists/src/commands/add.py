@@ -9,7 +9,7 @@ import re
 
 class Add(BaseCommannd):
   
-  TOKEN = os.getenv("TOKEN")
+  TOKEN = os.getenv("TOKEN", "secret")
   
   def __init__(self, auth,data):
     self.auth = auth
