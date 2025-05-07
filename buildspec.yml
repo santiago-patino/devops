@@ -28,8 +28,8 @@ phases:
       - echo Building the Docker image...
       - docker buildx build --platform linux/amd64 -t blacklists_app --load .
       - docker tag blacklists_app:latest 195265096595.dkr.ecr.us-east-2.amazonaws.com/blacklists_app:latest     
-      # - echo "Volviendo a la raíz para empaquetar el proyecto"
-      # - cd ..
+      - echo "Volviendo a la raíz para empaquetar el proyecto"
+      - cd ..
   post_build:
     commands:
       - echo Build completed on `date`
