@@ -6,7 +6,7 @@ import os
 
 class Get(BaseCommannd):
   
-  TOKEN = os.getenv("TOKEN")
+  TOKEN = os.getenv("TOKEN", "secret")
   
   def __init__(self, auth, email):
     self.auth = auth
