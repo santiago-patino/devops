@@ -8,12 +8,14 @@ from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 app = Flask(__name__)
 
+# Variables globales
+db_name = os.getenv("DB_NAME", "blacklists")
+db_user = os.getenv("DB_USER", "postgres")
+db_password = os.getenv("DB_PASSWORD", "postgres")
+db_host = os.getenv("DB_HOST", "database-1.ct080mawcvct.us-east-2.rds.amazonaws.com")
+db_port = os.getenv("DB_PORT", "5432")
+
 def create_db_if_not_exists():
-    db_name = os.getenv("DB_NAME")
-    db_user = os.getenv("DB_USER")
-    db_password = os.getenv("DB_PASSWORD")
-    db_host = os.getenv("DB_HOST")
-    db_port = os.getenv("DB_PORT", 5432)
 
     try:
         connection = psycopg2.connect(
@@ -44,7 +46,7 @@ if os.getenv("ENV") == "test":
     dataBaseUri = os.getenv("DATABASE_URI", "sqlite:///:memory:")
 else:
     create_db_if_not_exists()
-    dataBaseUri = f'postgresql://{ os.environ["DB_USER"] }:{ os.environ["DB_PASSWORD"] }@{ os.environ["DB_HOST"] }:{ os.environ["DB_PORT"] }/{ os.environ["DB_NAME"] }'
+    dataBaseUri = f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = dataBaseUri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
