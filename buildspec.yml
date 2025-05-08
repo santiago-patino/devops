@@ -42,7 +42,7 @@ phases:
 
 artifacts:
   files:
-    - 'blacklists/**/*'
+    - '**/*'
     - imagedefinitions.json
     - imageDetail.json
   secondary-artifacts:
