@@ -25,7 +25,7 @@ def get_email(email):
 
 @blacklists_blueprint.route('/blacklists/ping', methods = ['GET'])
 def ping():
-    return jsonify('pong'), 500
+    return jsonify('pong'), 200
 
 @blacklists_blueprint.route('/blacklists/reset', methods = ['POST'])
 def reset_users():

@@ -74,5 +74,5 @@ class TestBlacklists():
       response = test_client.get('/blacklists/ping')
       response_json = json.loads(response.data)
       
-      assert response.status_code == 500
+      assert response.status_code == 200
       assert response_json == 'pong'
