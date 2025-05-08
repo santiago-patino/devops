@@ -42,7 +42,7 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
+    - 'ss**/*'
     - imagedefinitions.json
     - imageDetail.json
   secondary-artifacts:
