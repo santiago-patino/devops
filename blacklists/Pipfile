@@ -6,6 +6,7 @@ name = "users"
 [packages]
 wheel = "*"
 flask = "*"
+click = "*"
 marshmallow = "*"
 python-abc = "*"
 pytest = "~=7.2.0"
@@ -16,6 +17,6 @@ python-dotenv = "*"
 flask_sqlalchemy = "*"
 psycopg2-binary = "*"
 requests = "*"
-
+newrelic = "*"
 
 [dev-packages]
