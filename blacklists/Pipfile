@@ -17,5 +17,6 @@ flask_sqlalchemy = "*"
 psycopg2-binary = "*"
 requests = "*"
 newrelic = "*"
+click = "*"
 
 [dev-packages]
