@@ -23,5 +23,5 @@ ENV NEW_RELIC_LICENSE_KEY=67e59f83880916ff658834947674e4c5FFFFNRAL
 ENV NEW_RELIC_APP_NAME=blacklists-app
 
 # Comando para ejecutar la aplicación Flask
-#CMD ["pipenv", "run", "flask", "run", "-h", "0.0.0.0", "-p", "3000"]
-CMD ["sh", "-c", "NEW_RELIC_CONFIG_FILE=newrelic.ini pipenv run newrelic-admin run-program flask run -h 0.0.0.0 -p 3000"]
+CMD ["pipenv", "run", "flask", "run", "-h", "0.0.0.0", "-p", "3000"]
+#CMD ["sh", "-c", "NEW_RELIC_CONFIG_FILE=newrelic.ini pipenv run newrelic-admin run-program flask run -h 0.0.0.0 -p 3000"]
