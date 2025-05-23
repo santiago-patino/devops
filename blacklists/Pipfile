@@ -16,6 +16,6 @@ python-dotenv = "*"
 flask_sqlalchemy = "*"
 psycopg2-binary = "*"
 requests = "*"
-
+newrelic = "*"
 
 [dev-packages]
