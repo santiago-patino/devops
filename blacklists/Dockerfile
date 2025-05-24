@@ -17,6 +17,8 @@ RUN pipenv install --deploy --ignore-pipfile
 
 COPY . /app
 
+RUN pipenv run python -c "import click; print(click.__version__)"
+
 # Establecer la variable de entorno FLASK_APP
 ENV FLASK_APP=./src/main.py
 
@@ -25,5 +27,6 @@ EXPOSE 3000
 
 
 # Comando para ejecutar la aplicación Flask
-CMD ["pipenv", "run", "flask", "run", "-h", "0.0.0.0", "-p", "3000"]
+#CMD ["pipenv", "run", "flask", "run", "-h", "0.0.0.0", "-p", "3000"]
+CMD ["pipenv", "run", "newrelic-admin", "run-program", "flask", "run", "--host=0.0.0.0", "--port=3000"]
 #CMD ["sh", "-c", "NEW_RELIC_CONFIG_FILE=newrelic.ini pipenv run newrelic-admin run-program flask run -h 0.0.0.0 -p 3000"]
