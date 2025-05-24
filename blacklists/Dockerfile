@@ -17,7 +17,7 @@ RUN pipenv install --deploy --ignore-pipfile
 
 COPY . /app
 
-RUN pipenv run python -c "import click; print(click.__version__)"
+#RUN pipenv run python -c "import click; print(click.__version__)"
 
 # Establecer la variable de entorno FLASK_APP
 ENV FLASK_APP=./src/main.py
