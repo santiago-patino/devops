@@ -29,5 +29,4 @@ ENV NEW_RELIC_CONFIG_FILE=newrelic.ini
 # Comando para ejecutar la aplicación Flask
 #CMD ["pipenv", "run", "flask", "run", "-h", "0.0.0.0", "-p", "3000"]
 
-#CMD ["sh", "-c", "NEW_RELIC_CONFIG_FILE=newrelic.ini pipenv run newrelic-admin run-program flask run -h 0.0.0.0 -p 3000"]
 CMD ["sh", "-c", "pipenv run newrelic-admin run-program flask run -h 0.0.0.0 -p 3000"]
