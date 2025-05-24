@@ -15,6 +15,8 @@ RUN pip install pipenv
 #RUN pipenv install
 RUN pipenv install --deploy --ignore-pipfile
 
+COPY . /app
+
 # Establecer la variable de entorno FLASK_APP
 ENV FLASK_APP=./src/main.py
 
